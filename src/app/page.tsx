@@ -29,12 +29,12 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl font-medium mb-12 tracking-tight">
               Ready to build something meaningful?
             </h1>
-            
-            <PromptWrapper 
-              activeMode={activeMode} 
-              onClearMode={handleClearMode} 
+
+            <PromptWrapper
+              activeMode={activeMode}
+              onClearMode={handleClearMode}
             />
-            
+
             <QuickActions onActionClick={handleActionClick} />
           </div>
 
@@ -44,5 +44,3 @@ export default function Home() {
     </div>
   );
 }
-
-

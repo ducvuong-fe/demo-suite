@@ -22,13 +22,13 @@ interface FieldProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Field = ({ 
-  label, 
-  value, 
-  placeholder, 
-  options, 
+const Field = ({
+  label,
+  value,
+  placeholder,
+  options,
   onValueChange,
-  onChange
+  onChange,
 }: FieldProps) => (
   <div className="flex items-center gap-1.5 whitespace-nowrap">
     <span className="text-gray-500 font-medium">{label}</span>
@@ -38,10 +38,13 @@ const Field = ({
           {value || placeholder}
           <ChevronDown size={14} className="text-gray-600" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="bg-[#1a1a1a] border-[#333] text-gray-200">
+        <DropdownMenuContent
+          align="start"
+          className="bg-[#1a1a1a] border-[#333] text-gray-200"
+        >
           {options.map((opt) => (
-            <DropdownMenuItem 
-              key={opt} 
+            <DropdownMenuItem
+              key={opt}
               onClick={() => onValueChange?.(opt)}
               className="hover:bg-[#333] focus:bg-[#333] cursor-pointer"
             >
@@ -70,34 +73,33 @@ export function PromptHeaderFields() {
 
   return (
     <div className="flex flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 text-sm border-b border-[#222]">
-      <Field 
-        label="Brand name:" 
-        value={brandName} 
+      <Field
+        label="Brand name:"
+        value={brandName}
         onChange={(e) => setBrandName(e.target.value)}
-        placeholder="..........." 
+        placeholder="..........."
       />
-      <Field 
-        label="Industry:" 
-        value={industry} 
+      <Field
+        label="Industry:"
+        value={industry}
         onValueChange={setIndustry}
         options={industryOptions}
-        placeholder="..........." 
+        placeholder="..........."
       />
-      <Field 
-        label="Style:" 
-        value={style} 
+      <Field
+        label="Style:"
+        value={style}
         onValueChange={setStyle}
         options={styleOptions}
-        placeholder="..........." 
+        placeholder="..........."
       />
-      <Field 
-        label="Type:" 
-        value={type} 
+      <Field
+        label="Type:"
+        value={type}
         onValueChange={setType}
         options={typeOptions}
-        placeholder="..........." 
+        placeholder="..........."
       />
     </div>
   );
 }
-

@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { ChevronDown, Search, Sparkles } from "lucide-react";
-import { 
-  Conversation, 
-  ConversationContent 
+import {
+  Conversation,
+  ConversationContent,
 } from "@/components/ai-elements/conversation";
-import { 
-  Message, 
-  MessageContent, 
-  MessageResponse 
+import {
+  Message,
+  MessageContent,
+  MessageResponse,
 } from "@/components/ai-elements/message";
 
 export function MessageList() {
@@ -27,13 +27,20 @@ export function MessageList() {
         <Message from="assistant">
           <MessageContent className="text-gray-300 max-w-[95%] flex flex-col gap-6">
             <MessageResponse className="text-[14px] leading-relaxed font-suite-body">
-              Thank you for choosing Direction. I&apos;ll now create 3 options based on this direction.
+              Thank you for choosing Direction. I&apos;ll now create 3 options
+              based on this direction.
             </MessageResponse>
 
             {/* Collapsible Tool Outputs */}
             <div className="flex flex-col gap-4 pl-1">
-              <ToolStep icon={<Search size={14} />} label="Search For Reference" />
-              <ToolStep icon={<Sparkles size={14} />} label="Design Guidelines" />
+              <ToolStep
+                icon={<Search size={14} />}
+                label="Search For Reference"
+              />
+              <ToolStep
+                icon={<Sparkles size={14} />}
+                label="Design Guidelines"
+              />
             </div>
 
             {/* Image Generation Output */}
@@ -43,7 +50,7 @@ export function MessageList() {
               </div>
               <div className="grid grid-cols-3 gap-3">
                 <ImageThumb label="homie" />
-                <ImageThumb label="JIM&apos;S coffee" />
+                <ImageThumb label="JIM'S coffee" />
                 <ImageThumb label="Velotti" />
               </div>
             </div>
@@ -54,11 +61,11 @@ export function MessageList() {
   );
 }
 
-function ToolStep({ icon, label }: { icon: React.ReactNode, label: string }) {
+function ToolStep({ icon, label }: { icon: React.ReactNode; label: string }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="flex flex-col w-full">
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-3 text-gray-500 hover:text-foreground transition-all text-[13px] font-medium group/step"
       >
@@ -66,11 +73,15 @@ function ToolStep({ icon, label }: { icon: React.ReactNode, label: string }) {
           {icon}
         </div>
         <span>{label}</span>
-        <ChevronDown size={14} className={`text-gray-700 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown
+          size={14}
+          className={`text-gray-700 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+        />
       </button>
       {isOpen && (
         <div className="mt-2 ml-[30px] text-[12px] text-gray-600 border-l border-border pl-4 py-2 leading-relaxed italic">
-          Fetching inspiration from minimalist archives and modern fashion brand boards...
+          Fetching inspiration from minimalist archives and modern fashion brand
+          boards...
         </div>
       )}
     </div>
@@ -88,6 +99,3 @@ function ImageThumb({ label }: { label: string }) {
     </div>
   );
 }
-
-
-

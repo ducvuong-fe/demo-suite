@@ -4,7 +4,9 @@ export function TopNav() {
   return (
     <header className="flex justify-between items-center w-full px-10 py-6 bg-background sticky top-0 z-20">
       <div className="flex items-center gap-2">
-        <span className="font-bold text-lg text-foreground tracking-tight font-suite-body">Creative Studio</span>
+        <span className="font-bold text-lg text-foreground tracking-tight font-suite-body">
+          Creative Studio
+        </span>
       </div>
       <div className="flex items-center gap-4">
         <div className="flex items-center bg-suite-glass-medium rounded-full p-0.5 border border-border shadow-suite-elevation-lift">
@@ -20,5 +22,3 @@ export function TopNav() {
     </header>
   );
 }
-
-

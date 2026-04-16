@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "ultrafix": "ultracite fix && bun run typecheck"
   },
   "dependencies": {
     "@ai-sdk/react": "^3.0.164",
@@ -48,7 +50,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.8.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "ultracite": "^7.5.9"
   }
 }

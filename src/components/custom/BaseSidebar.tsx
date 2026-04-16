@@ -1,6 +1,15 @@
 "use client";
 
-import { Home, Sparkles, MessageCircle, Folder, FileText, Bell, Crown, User } from "lucide-react";
+import {
+  Home,
+  Sparkles,
+  MessageCircle,
+  Folder,
+  FileText,
+  Bell,
+  Crown,
+  User,
+} from "lucide-react";
 
 export function BaseSidebar() {
   return (
@@ -30,11 +39,19 @@ export function BaseSidebar() {
   );
 }
 
-function NavButton({ icon, active = false }: { icon: React.ReactNode; active?: boolean }) {
+function NavButton({
+  icon,
+  active = false,
+}: {
+  icon: React.ReactNode;
+  active?: boolean;
+}) {
   return (
-    <button className={`p-2 transition-all relative group ${
-      active ? "text-foreground" : "text-gray-500 hover:text-gray-200"
-    }`}>
+    <button
+      className={`p-2 transition-all relative group ${
+        active ? "text-foreground" : "text-gray-500 hover:text-gray-200"
+      }`}
+    >
       {icon}
       {active && (
         <div className="absolute -left-[20px] top-1/2 -translate-y-1/2 w-[4px] h-[20px] bg-foreground rounded-r-full" />
@@ -42,4 +59,3 @@ function NavButton({ icon, active = false }: { icon: React.ReactNode; active?: b
     </button>
   );
 }
-

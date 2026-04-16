@@ -1,4 +1,10 @@
-import { Paintbrush, Lightbulb, Megaphone, ShoppingCart, Image as ImageIcon } from "lucide-react";
+import {
+  Paintbrush,
+  Lightbulb,
+  Megaphone,
+  ShoppingCart,
+  Image as ImageIcon,
+} from "lucide-react";
 
 interface QuickActionsProps {
   onActionClick?: (actionId: string) => void;
@@ -6,11 +12,31 @@ interface QuickActionsProps {
 
 export function QuickActions({ onActionClick }: QuickActionsProps) {
   const actions = [
-    { id: "logo", label: "Create Logo", icon: <Paintbrush size={14} className="text-blue-400" /> },
-    { id: "branding", label: "Branding", icon: <Lightbulb size={14} className="text-purple-400" /> },
-    { id: "marketing", label: "Marketing", icon: <Megaphone size={14} className="text-yellow-400" /> },
-    { id: "ecommerce", label: "E-Commerce", icon: <ShoppingCart size={14} className="text-green-400" /> },
-    { id: "art", label: "Art", icon: <ImageIcon size={14} className="text-pink-400" /> },
+    {
+      id: "logo",
+      label: "Create Logo",
+      icon: <Paintbrush size={14} className="text-blue-400" />,
+    },
+    {
+      id: "branding",
+      label: "Branding",
+      icon: <Lightbulb size={14} className="text-purple-400" />,
+    },
+    {
+      id: "marketing",
+      label: "Marketing",
+      icon: <Megaphone size={14} className="text-yellow-400" />,
+    },
+    {
+      id: "ecommerce",
+      label: "E-Commerce",
+      icon: <ShoppingCart size={14} className="text-green-400" />,
+    },
+    {
+      id: "art",
+      label: "Art",
+      icon: <ImageIcon size={14} className="text-pink-400" />,
+    },
   ];
 
   return (
@@ -28,4 +54,3 @@ export function QuickActions({ onActionClick }: QuickActionsProps) {
     </div>
   );
 }
-

@@ -41,10 +41,14 @@ export function PromptWrapper({ activeMode, onClearMode }: PromptWrapperProps) {
         className="bg-[#141414] border border-[#262626] rounded-[24px] focus-within:border-[#404040] transition-colors shadow-2xl overflow-hidden"
       >
         {activeMode === "logo" && <PromptHeaderFields />}
-        
+
         <PromptInputBody className="p-0">
           <PromptInputTextarea
-            placeholder={activeMode === "logo" ? "Describe your brand name, visual style, color palette, and overall brand personality" : "Start with a simple goal. We'll shape it into a finished result."}
+            placeholder={
+              activeMode === "logo"
+                ? "Describe your brand name, visual style, color palette, and overall brand personality"
+                : "Start with a simple goal. We'll shape it into a finished result."
+            }
             className={`text-gray-200 placeholder:text-[#444] border-none bg-transparent p-6 ${activeMode === "logo" ? "min-h-[100px]" : "min-h-[60px]"} max-h-[300px] focus-visible:ring-0 text-lg resize-none shadow-none leading-relaxed`}
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -63,7 +67,7 @@ export function PromptWrapper({ activeMode, onClearMode }: PromptWrapperProps) {
                 </PromptInputActionMenuContent>
               </PromptInputActionMenu>
             </PromptInputTools>
-            
+
             {activeMode === "logo" && <PromptModeTag onRemove={onClearMode} />}
           </div>
 
@@ -74,14 +78,10 @@ export function PromptWrapper({ activeMode, onClearMode }: PromptWrapperProps) {
             >
               <MicIcon size={20} />
             </button>
-            <PromptInputSubmit 
-              className="h-10 w-10 rounded-full bg-white text-black hover:bg-gray-200 transition-colors flex items-center justify-center shadow-lg" 
-            />
+            <PromptInputSubmit className="h-10 w-10 rounded-full bg-white text-black hover:bg-gray-200 transition-colors flex items-center justify-center shadow-lg" />
           </div>
         </PromptInputFooter>
       </PromptInput>
     </div>
   );
 }
-
-
